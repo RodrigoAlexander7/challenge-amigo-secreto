@@ -4,11 +4,16 @@ let amigos = []
 const agregarAmigo = () =>{
    const input = document.getElementById('amigo');
    const amigo = input.value.trim() // removemos espacios
-   if(amigo !== '' && !amigos.includes(amigo)) amigos.push(amigo);
+   
+   if(amigo !== '' && !amigos.includes(amigo)) {
+      amigos.push(amigo);
+      actualizarListaAmigos(amigo)
+   }
    else alert('Ingrese un nombre valido'); 
+
    input.value = '';
    console.log(amigos)
-   actualizarListaAmigos(amigo)
+   
 }
 const actualizarListaAmigos = (amigo)=>{
    const lista = document.getElementById('listaAmigos');
