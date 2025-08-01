@@ -4,9 +4,20 @@ let amigos = []
 const agregarAmigo = () =>{
    const input = document.getElementById('amigo');
    const amigo = input.value.trim() // removemos espacios
-   if(amigo === '' ) alert('Ingrese un nombre valido');
+   if(amigo === '') alert('Ingrese un nombre valido');
    else amigos.push(amigo);
-   input.innerHTML = '';
+   input.value = '';
    console.log(amigos)
+   actualizarListaAmigos(amigo)
+}
+const actualizarListaAmigos = (amigo)=>{
+   const lista = document.getElementById('listaAmigos');
+   const item = document.createElement('li')
+   item.textContent = amigo
+   lista.appendChild(item)
 }
 
+const sortearAmigo = ()=>{
+   selected = amigos[Math.floor(Math.random()*amigos.length)];
+
+}
