@@ -13,7 +13,6 @@ const agregarAmigo = () =>{
    else alert('Ingrese un nombre valido'); 
 
    input.value = '';
-   console.log(amigos)
    mostrarListaAmigos(amigos)
    
 }
@@ -46,6 +45,7 @@ const actualizarListaAmigos = (amigo)=>{
 */
 
 const sortearAmigo = ()=>{
+   const container = document.getElementById('resultado');
    selected = amigos[Math.floor(Math.random()*amigos.length)];
-
+container.textContent = `El amigo sorteado es: ${selected}`;
 }
